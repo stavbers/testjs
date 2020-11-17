@@ -9,14 +9,28 @@
 //    };
 //    runFunction(firstFunction);
 
+var T;
+function readURL(e) {
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
+        $(reader).load(function(e) { 
+            $('#upload-img').attr('src', e.target.result); 
+        });
+        reader.readAsDataURL(this.files[0]);
+    }
+}
+$("#upload").change(readURL);
 // замена картинок
+// var T = 'img/img07.jpg';
 $('.menu-item-img').hover(function () {
     $(this).attr('src', 'img/img05.jpg');
     $(this).css('cursor', 'pointer');
 }, function () {
-    $(this).attr('src', 'img/img07.jpg');
+    $(this).attr('src', T);
     // $(this).attr('src', 'img/img06.jpg');
 });   
+
+
 
 
 // var arr = [3,2,5,6];
