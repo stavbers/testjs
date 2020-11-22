@@ -303,12 +303,12 @@ function detectPersonalLevel() {
 }
 detectPersonalLevel();
 
-function showMyDB(){
-    if(personalMovieDB.privat == false) {
+function showMyDB(hidden){
+    if(!hidden) {
         console.log(personalMovieDB);
     }
 }
-showMyDB();
+showMyDB(personalMovieDB.privat);
 
 function writeYourGenres() {
     for(let i = 1; i <= 3; i++){
